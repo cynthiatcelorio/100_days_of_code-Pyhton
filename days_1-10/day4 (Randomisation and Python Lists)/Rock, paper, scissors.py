@@ -1,5 +1,8 @@
 import random
 
+# Podría haber metido los dibujitos en un array, acabo de caer :()
+
+
 game = ["rock", "paper", "scissors"]
 
 computer = game[random.randint(0, len(game) - 1)]
