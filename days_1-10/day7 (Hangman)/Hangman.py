@@ -1,11 +1,12 @@
 import random
+from hangman_art import art
 
 word_list = ["GUYBRUSH", "LECHUCK", "ELAINE", "WALLY", "LARGO", "MURRAY"]
 word = word_list[random.randint(0, len(word_list) - 1)]
 game_word = "_" * len(word)
 
 game_over = False
-failures = 0
+lives = len(art) - 1
 print(game_word)
 
 while not game_over:
@@ -22,12 +23,12 @@ while not game_over:
             game_word = ''.join(lst)
 
     if guess not in word:
-        failures += 1
-        
+        lives -= 1
+    print(art[lives])    
     print(game_word + "\n")
 
     # comprobar game_over
-    if failures > 5 or not "_" in game_word:
+    if lives == 0 or not "_" in game_word:
         game_over = True
 
     if game_over: 
