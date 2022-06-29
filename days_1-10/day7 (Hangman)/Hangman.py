@@ -6,7 +6,7 @@ game_word = "_" * len(word)
 
 game_over = False
 failures = 0
-
+print(game_word)
 
 while not game_over:
     guess = input("Guess a letter: ")
