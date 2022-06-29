@@ -1,6 +1,6 @@
 import random
 
-word_list = ["GUYBRUSH", "LECHUCK", "ELAINE", "WALLY", "LARGO"]
+word_list = ["GUYBRUSH", "LECHUCK", "ELAINE", "WALLY", "LARGO", "MURRAY"]
 word = word_list[random.randint(0, len(word_list) - 1)]
 game_word = "_" * len(word)
 
