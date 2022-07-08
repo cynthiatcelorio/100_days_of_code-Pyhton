@@ -3,16 +3,10 @@ import random
 # initialize
 
 deck = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 11, 12, 12, 12, 12, 13, 13, 13, 13]
-player = [random.choice(deck), random.choice(deck)]
-dealer = [random.choice(deck), random.choice(deck)]
 player_sum, dealer_sum = 0, 0
 another_card = 'y'
-
-for card in player:
-    player_sum += card
-
-for card in dealer:
-    dealer_sum += card
+player = []
+dealer = []
 
 # add cards functions
 
@@ -30,9 +24,16 @@ def dealer_add_card(dealer_sum):
     dealer_sum += new_dealer_card
     return dealer_sum
 
+# first cards
+
+player_sum = player_add_card(player_sum)
+player_sum = player_add_card(player_sum)
+dealer_sum = dealer_add_card(dealer_sum) 
+dealer_sum = dealer_add_card(dealer_sum) 
+
 # game
 
-while another_card == 'y' and player_sum < 22 and dealer_sum < 21:
+while another_card == 'y' and player_sum < 22 and dealer_sum < 22:
 
     print(f"Your cards: {player}")
     print(f"Computer's first card: {dealer[-1]}")
